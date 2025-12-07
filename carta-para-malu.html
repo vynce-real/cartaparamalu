@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cartinha para Malu</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f7e7ea;
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 30px;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #d46a7e;
+    }
+
+    button {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      background: #d46a7e;
+      color: #fff;
+      transition: 0.2s;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background: #c2576a;
+    }
+
+    #texto {
+      opacity: 0;
+      margin-top: 20px;
+      text-align: left;
+      font-size: 1.1rem;
+      line-height: 1.6rem;
+      transition: 1s;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Uma cartinha para você Malu 💌</h1>
+
+    <button onclick="mostrarTexto()">Abrir cartinha</button>
+
+    <div id="texto"></div>
+  </div>
+
+  <script>
+    const mensagem = "Malu...\n\nEu preparei essa cartinha com muito carinho porque queria te dizer que você é alguém realmente especial para mim. Cada conversa, cada sorriso e cada momento ao seu lado deixa tudo mais leve.\n\nEspero que você goste disso aqui tanto quanto eu gostei de fazer. 💗";
+
+    let i = 0;
+
+    function escrever() {
+      const box = document.getElementById("texto");
+      if (i < mensagem.length) {
+        box.innerHTML += mensagem.charAt(i);
+        i++;
+        setTimeout(escrever, 35);
+      }
+    }
+
+    function mostrarTexto() {
+      const box = document.getElementById("texto");
+      box.style.opacity = 1;
+      escrever();
+    }
+  </script>
+
+</body>
+</html>
